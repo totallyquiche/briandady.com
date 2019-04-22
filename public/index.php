@@ -139,26 +139,37 @@
                 <!-- Project cards row start -->
                 <div class="row">
 
-                    <?php for ($i = 0; $i < 6; $i++): ?>
+                    <!-- Project card column start -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
 
-                        <!-- Project card column start -->
-                        <div class="col-12 col-md-6 col-lg-4 mb-4">
-
-                            <!-- Project card start -->
-                            <div class="card">
-                                <img src="https://via.placeholder.com/500x300?text=Project+Thumbnail" class="card-img-top" alt="Project thumbnail">
-                                <div class="card-body">
-                                    <h2 class="card-title">Project Title</h2>
-                                    <p class="card-text">Here is a little bit about what I did in this project</p>
-                                    <a href="#" class="btn btn-primary">Read More</a>
-                                </div>
+                        <!-- Project card start -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">briandady.com</h2>
+                                <p class="card-text">My personal website, using the GitHub API to dynamically generate my bio.</p>
+                                <a href="https://github.com/totallyquiche/briandady.com" target="_BLANK" class="btn btn-primary">View on GitHub</a>
                             </div>
-                            <!-- Project card stop -->
-
                         </div>
-                        <!-- Project card column end -->
+                        <!-- Project card stop -->
 
-                    <?php endfor; ?>
+                    </div>
+                    <!-- Project card column end -->
+
+                    <!-- Project card column start -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                        <!-- Project card start -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">URI to Link</h2>
+                                <p class="card-text">A small PHP library for parsing and converting links inside of text.</p>
+                                <a href="https://github.com/totallyquiche/php-uri-to-link" target="_BLANK" class="btn btn-primary">View on GitHub</a>
+                            </div>
+                        </div>
+                        <!-- Project card stop -->
+
+                    </div>
+                    <!-- Project card column end -->
 
                 </div>
                 <!-- Project cards row end -->
