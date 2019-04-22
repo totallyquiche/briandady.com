@@ -19,7 +19,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="">
+        <meta name="description" content="Brian Dady's contact information and web development portfolio.">
         <meta name="author" content="<?= $github_user_information['name'] . ' <' . $github_user_information['email'] . '>'; ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
 
-    <body>
+    <body style="background: #F2F2F2;">
 
         <!-- Page container start -->
         <div class="container">
@@ -44,20 +44,32 @@
                 <div class="row mt-2">
 
                     <!-- Avatar column start -->
-                    <div class="col-12 col-md-4 text-center">
-                        <img id="about-details-avatar-image" class="rounded-circle img-fluid" src="<?= $github_user_information['avatar_url']; ?>" alt="Photo of Brian Dady">
+                    <div class="col-12 col-md-4 mb-2 mt-2 text-center">
+                        <img id="about-details-avatar-image" class="rounded-circle img-fluid" style="max-width: 250px" src="<?= $github_user_information['avatar_url']; ?>" alt="Photo of Brian Dady">
                     </div>
                     <!-- Avatar column end -->
 
                     <!-- Info column start -->
                     <div class="col-12 col-md-8">
 
-                        <!-- Bio row start -->
+                        <!-- Greeting row start -->
                         <div class="row mt-2 mt-md-4 mt-lg-5">
+
+                            <!-- Greeting column start -->
+                            <div class="col-12">
+                                <h1 class="align-middle">Hello, World!</h1>
+                            </div>
+                            <!-- Greeting column stop -->
+
+                        </div>
+                        <!-- Greeting row stop -->
+
+                        <!-- Bio row start -->
+                        <div class="row">
 
                             <!-- Bio column start -->
                             <div class="col-12">
-                                <p class="align-middle"><?= $github_user_information['bio']; ?></p>
+                                <p class="align-middle"><?= \TotallyQuiche\URItoLink\Converter::replace($github_user_information['bio'], '_BLANK'); ?></p>
                             </div>
                             <!-- Bio column stop -->
 
@@ -153,6 +165,18 @@
 
             </div>
             <!-- Projects section end -->
+
+            <!-- Footer row start -->
+            <div class="row">
+
+                <!-- Copyright column start -->
+                <div class="col-12 text-center">
+                    <p><span class="fas fa-fw fa-copyright"></span><?= date('Y'); ?> Brian Dady</p>
+                </div>
+                <!-- Copyright column end -->
+
+            </div>
+            <!-- Footer row end -->
 
         </div>
         <!-- Page container end -->
