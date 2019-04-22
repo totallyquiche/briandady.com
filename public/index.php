@@ -45,7 +45,7 @@
 
                     <!-- Avatar column start -->
                     <div class="col-12 col-md-4 mb-2 mt-2 text-center">
-                        <img id="about-details-avatar-image" class="rounded-circle img-fluid" style="max-width: 250px" src="<?= $github_user_information['avatar_url']; ?>" alt="Photo of Brian Dady">
+                        <img id="about-details-avatar-image" class="rounded-circle img-fluid" style="max-width: 200px" src="<?= $github_user_information['avatar_url']; ?>" alt="Photo of Brian Dady">
                     </div>
                     <!-- Avatar column end -->
 
@@ -53,7 +53,7 @@
                     <div class="col-12 col-md-8">
 
                         <!-- Greeting row start -->
-                        <div class="row mt-2 mt-md-4 mt-lg-5">
+                        <div class="row mt-2 mt-md-2 mt-md-3 mt-lg-4">
 
                             <!-- Greeting column start -->
                             <div class="col-12">
