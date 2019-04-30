@@ -3,7 +3,7 @@
         "knplabs/github-api": "^2.11",
         "php-http/guzzle6-adapter": "^1.1",
         "vlucas/phpdotenv": "^3.3",
-        "totallyquiche/php-uri-to-link": "0.1.3"
+        "totallyquiche/php-url-to-link": "0.1.5"
     },
     "require-dev": {
         "phpunit/phpunit": "^8"

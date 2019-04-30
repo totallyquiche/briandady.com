@@ -13,6 +13,9 @@
 
     // Get GitHub user information
     $github_user_information = $github_client->api('current_user')->show();
+
+    // Instatiate Converter
+    $converter = new \TotallyQuiche\URLtoLink\Converter;
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +69,7 @@
 
                             <!-- Bio column start -->
                             <div class="col-12">
-                                <p class="align-middle"><?= \TotallyQuiche\URItoLink\Converter::replace($github_user_information['bio'], '_BLANK'); ?></p>
+                                <p class="align-middle"><?= $converter->convert($github_user_information['bio'], '_BLANK'); ?></p>
                             </div>
                             <!-- Bio column stop -->
 
