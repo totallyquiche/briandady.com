@@ -16,6 +16,14 @@
 
     // Instatiate Converter
     $converter = new \TotallyQuiche\URLtoLink\Converter;
+
+    // Get projects
+    $project_repo_names = ['briandady.com', 'php-url-to-link'];
+    $projects = [];
+
+    foreach ($project_repo_names as $project_repo_name) {
+        $projects[] = $github_client->api('repo')->show('totallyquiche', $project_repo_name);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,9 +38,12 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Core CSS -->
+        <link rel="stylesheet" href="./assets/css/style.css">
     </head>
 
-    <body style="background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/brickwall.png');">
+    <body>
 
         <!-- Page container start -->
         <div class="container">
@@ -45,7 +56,7 @@
 
                     <!-- Avatar column start -->
                     <div class="col-12 col-md-4 mb-2 mt-2 text-center">
-                        <img id="about-details-avatar-image" class="rounded-circle img-fluid" style="max-width: 200px" src="<?= $github_user_information['avatar_url']; ?>" alt="Photo of Brian Dady">
+                        <img id="about-details-avatar-image" class="rounded-circle img-fluid" src="<?= $github_user_information['avatar_url']; ?>" alt="Photo of Brian Dady">
                     </div>
                     <!-- Avatar column end -->
 
@@ -53,7 +64,7 @@
                     <div class="col-12 col-md-8">
 
                         <!-- Greeting row start -->
-                        <div class="row mt-2 mt-md-2 mt-md-3 mt-lg-4">
+                        <div class="row mt-2 mt-md-2 mt-md-3 mt-lg-5">
 
                             <!-- Greeting column start -->
                             <div class="col-12">
@@ -86,7 +97,7 @@
                                 <ul class="list-unstyled">
 
                                     <!-- Email start -->
-                                    <li>Email me at 
+                                    <li>Email me at
                                         <a href="mailto:<?= $github_user_information['email']; ?>" title="Send an email to <?= $github_user_information['name']; ?>"  target="_BLANK">
                                             <span class="fas fa-fw fa-envelope"></span><?= $github_user_information['email']; ?>
                                         </a>
@@ -94,7 +105,7 @@
                                     <!-- Email end -->
 
                                     <!-- GitHub start -->
-                                    <li>See my GitHub at  
+                                    <li>See my GitHub at
                                         <a href="<?= $github_user_information['html_url']; ?>" title="View <?= $github_user_information['login']; ?>'s GitHub page" target="_BLANK">
                                             <span class="fab fa-fw fa-github"></span><?= $github_user_information['login']; ?>
                                         </a>
@@ -139,37 +150,25 @@
                 <!-- Project cards row start -->
                 <div class="row">
 
-                    <!-- Project card column start -->
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <?php foreach ($projects as $project): ?>
 
-                        <!-- Project card start -->
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">briandady.com</h2>
-                                <p class="card-text">My personal website, using the GitHub API to dynamically generate my bio.</p>
-                                <a href="https://github.com/totallyquiche/briandady.com" target="_BLANK" class="btn btn-primary">View on GitHub</a>
+                        <!-- Project card column start -->
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                            <!-- Project card start -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2 class="card-title"><?= $project['name']; ?></h2>
+                                    <p class="card-text"><?= $project['description']; ?></p>
+                                    <a href="<?= $project['html_url']; ?>" target="_BLANK" class="btn btn-primary">View on GitHub</a>
+                                </div>
                             </div>
+                            <!-- Project card stop -->
+
                         </div>
-                        <!-- Project card stop -->
+                        <!-- Project card column end -->
 
-                    </div>
-                    <!-- Project card column end -->
-
-                    <!-- Project card column start -->
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-
-                        <!-- Project card start -->
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">URI to Link</h2>
-                                <p class="card-text">A small PHP library for parsing and converting links inside of text.</p>
-                                <a href="https://github.com/totallyquiche/php-uri-to-link" target="_BLANK" class="btn btn-primary">View on GitHub</a>
-                            </div>
-                        </div>
-                        <!-- Project card stop -->
-
-                    </div>
-                    <!-- Project card column end -->
+                    <?php endforeach; ?>
 
                 </div>
                 <!-- Project cards row end -->
