@@ -18,7 +18,7 @@
     $converter = new \TotallyQuiche\URLtoLink\Converter;
 
     // Get projects
-    $project_repo_names = ['briandady.com', 'php-url-to-link'];
+    $project_repo_names = ['briandady.com', 'php-url-to-link', 'second-city-murals-api'];
     $projects = [];
 
     foreach ($project_repo_names as $project_repo_name) {

@@ -2,6 +2,10 @@ body {
     background-image: url('../images/brickwall.png');
 }
 
+h2 {
+    font-size: 1.75rem;
+}
+
 #about-details-avatar-image {
     max-width: 250px;
 }
