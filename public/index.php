@@ -80,7 +80,9 @@
 
                             <!-- Bio column start -->
                             <div class="col-12">
-                                <p class="align-middle"><?= $converter->convert($github_user_information['bio'], '_BLANK'); ?></p>
+                                <p>
+                                    My name is <b><?= $github_user_information['name']; ?></b>. <?= $converter->convert($github_user_information['bio'], '_BLANK'); ?>
+                                </p>
                             </div>
                             <!-- Bio column stop -->
 
