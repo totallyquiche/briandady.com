@@ -18,7 +18,7 @@
     $converter = new \TotallyQuiche\URLtoLink\Converter;
 
     // Get projects
-    $project_repo_names = ['briandady.com', 'php-url-to-link', 'second-city-murals-api'];
+    $project_repo_names = ['second-city-murals-api', 'php-url-to-link', 'briandady.com'];
     $projects = [];
 
     foreach ($project_repo_names as $project_repo_name) {
@@ -153,12 +153,12 @@
                     <?php foreach ($projects as $project): ?>
 
                         <!-- Project card column start -->
-                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="col-12 mb-4">
 
                             <!-- Project card start -->
                             <div class="card">
                                 <div class="card-body">
-                                    <h2 class="card-title"><?= $project['name']; ?></h2>
+                                    <h2 class="card-title"><?= $project['name']; ?> <span class="badge badge-secondary align-middle"><?= $project['language'] ?></span></h2>
                                     <p class="card-text"><?= $project['description']; ?></p>
                                     <a href="<?= $project['html_url']; ?>" target="_BLANK" class="btn btn-primary">View on GitHub</a>
                                 </div>

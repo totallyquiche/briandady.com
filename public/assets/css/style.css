@@ -2,16 +2,12 @@ body {
     background-image: url('../images/brickwall.png');
 }
 
-h2 {
-    font-size: 1.75rem;
+.badge {
+    font-size: 0.75rem;
 }
 
 #about-details-avatar-image {
     max-width: 250px;
-}
-
-.card-text {
-    min-height: 5rem;
 }
 
 @media only screen and (max-width: 990px) {
