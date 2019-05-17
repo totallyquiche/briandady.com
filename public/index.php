@@ -8,33 +8,22 @@
     // Instantiate GitHub client
     $github_client = new \Github\Client();
 
-    // Authenticate GitHub client
-    $github_client->authenticate(getenv('GITHUB_PERSONAL_ACCESS_TOKEN'), null, \Github\Client::AUTH_HTTP_TOKEN);
-
-    // Get GitHub user information
-    $github_user_information = $github_client->api('current_user')->show();
-
     // Instatiate Converter
     $converter = new \TotallyQuiche\URLtoLink\Converter;
 
-    // Get projects
-    $project_repo_names = [
-        'second-city-murals-api',
-        'php-url-to-link',
-        'briandady.com'
-    ];
+    try {
+        // Authenticate GitHub client
+        $github_client->authenticate(getenv('GITHUB_PERSONAL_ACCESS_TOKEN'), null, \Github\Client::AUTH_HTTP_TOKEN);
 
-    $projects = [];
+        // Get GitHub user information
+        $github_user_information = $github_client->api('current_user')->show();
 
-    foreach ($project_repo_names as $project_repo_name) {
-        try {
-            $project = $github_client->api('repo')
-                                     ->show('totallyquiche', $project_repo_name);
-        } catch (\Github\Exception\RuntimeException $exception) {
-            continue;
-        }
-
-        $projects[] = $project;
+        // Get projects
+         $projects = $github_client->api('user')->repositories('totallyquiche');
+    } catch (Exception $exception) {
+        error_log('Exception encountered while connecting to GitHub API: ' . $exception->getMessage());
+        http_response_code(500);
+        exit();
     }
 ?>
 
