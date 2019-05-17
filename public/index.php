@@ -18,11 +18,23 @@
     $converter = new \TotallyQuiche\URLtoLink\Converter;
 
     // Get projects
-    $project_repo_names = ['second-city-murals-api', 'php-url-to-link', 'briandady.com'];
+    $project_repo_names = [
+        'second-city-murals-api',
+        'php-url-to-link',
+        'briandady.com'
+    ];
+
     $projects = [];
 
     foreach ($project_repo_names as $project_repo_name) {
-        $projects[] = $github_client->api('repo')->show('totallyquiche', $project_repo_name);
+        try {
+            $project = $github_client->api('repo')
+                                     ->show('totallyquiche', $project_repo_name);
+        } catch (\Github\Exception\RuntimeException $exception) {
+            continue;
+        }
+
+        $projects[] = $project;
     }
 ?>
 
