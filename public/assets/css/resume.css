@@ -1,0 +1,86 @@
+body {
+    background-image: url('../images/soft_wallpaper.png');
+}
+
+main {
+    font-family: "EB Garamond", serif;
+}
+
+main > section:first-of-type {
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.15em;
+}
+
+abbr {
+    cursor: help;
+}
+
+li {
+    list-style-type: square;
+}
+
+@media only screen and (min-width: 990px) {
+    main {
+        margin: 0 auto;
+        padding: 0 2rem;
+        font-size: 1.25rem;
+        max-width: 990px;
+    }
+}
+
+@media only screen and (min-width: 641px) and (max-width: 989px) {
+    main {
+        margin: 0 2rem;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 640px) {
+    main {
+        margin: 0 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    main {
+        margin: 0 0.25rem;
+        font-size: 1rem;
+    }
+}
+
+@media only print {
+    main {
+        font-size: 14pt;
+    }
+
+    main > section:first-of-type > h1 {
+        font-size: 24pt;
+    }
+
+    h1 {
+        font-size: 16pt;
+    }
+
+    h2 {
+        font-size: 14pt;
+    }
+
+    hr {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    abbr {
+        text-decoration: none;
+    }
+}
