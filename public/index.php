@@ -115,6 +115,15 @@
                                     </li>
                                     <!-- GitHub end -->
 
+                                    <!-- Resume start -->
+                                    <li>View my
+                                        <a href="resume.html" title="View Brian Dady's resume" target="_BLANK">
+                                            <span class="fas fa-fw fa-file-alt"></span>resume
+                                        </a>
+                                    </li>
+                                    <!-- Resume end -->
+
+
                                 </ul>
                                 <!-- Contact methods list stop -->
 
