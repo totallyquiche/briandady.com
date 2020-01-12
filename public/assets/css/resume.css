@@ -56,7 +56,8 @@ li {
 
 @media only print {
     main {
-        font-size: 14pt;
+        font-size: 12pt;
+        line-height: 1.15rem;
     }
 
     main > section:first-of-type > h1 {
@@ -64,11 +65,11 @@ li {
     }
 
     h1 {
-        font-size: 16pt;
+        font-size: 14pt;
     }
 
     h2 {
-        font-size: 14pt;
+        font-size: 12pt;
     }
 
     hr {
