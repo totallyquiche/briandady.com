@@ -1,5 +1,5 @@
 body {
-    background-image: url('../images/soft_wallpaper.png');
+    background-image: url('../images/background.png');
 }
 
 #greeting {
@@ -8,6 +8,10 @@ body {
 
 .badge {
     font-size: 0.75rem;
+}
+
+.card {
+    background-image: url('../images/card-background.png');
 }
 
 #projects {
