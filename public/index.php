@@ -35,6 +35,9 @@
         <meta name="author" content="<?= $github_user_information['name'] . ' <' . $github_user_information['email'] . '>'; ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title><?= $github_user_information['name']; ?></title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
@@ -48,7 +51,7 @@
                     <div class="col-12 col-md-8">
                         <div class="row mt-2 mt-md-2 mt-md-3 mt-lg-5">
                             <div class="col-12">
-                                <h1 class="align-middle">Hello, World!</h1>
+                                <h1 id="greeting" class="align-middle">Hello, World!</h1>
                             </div>
                         </div>
                         <div class="row">
@@ -97,9 +100,13 @@
                             <?php foreach ($projects as $index => $project): ?>
                                     <div class="card <?= ($index % 2 === 0) ? 'card-even' : 'card-odd' ?>">
                                         <div class="card-body">
-                                            <h2 class="card-title"><?= $project['name']; ?> <span class="badge badge-secondary align-middle"><?= $project['language'] ?></span></h2>
+                                            <h2 class="card-title">
+                                                <a href="<?= $project['html_url']; ?>" target="_BLANK" title="View on GitHub"><?= $project['name']; ?></a>
+                                                <span class="badge badge-secondary align-middle">
+                                                    <?= $project['language'] ?>
+                                                </span>
+                                            </h2>
                                             <p class="card-text"><?= $link_converter->convert($project['description'], '_BLANK'); ?></p>
-                                            <a href="<?= $project['html_url']; ?>" target="_BLANK" class="btn btn-primary">View on GitHub</a>
                                         </div>
                                     </div>
                             <?php endforeach; ?>
