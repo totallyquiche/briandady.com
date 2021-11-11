@@ -6,6 +6,19 @@ body {
     font-size: 0.75rem;
 }
 
+#projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    grid-auto-flow: row;
+}
+
+.card-title {
+    font-size: 1.25em;
+}
+
 #about-details-avatar-image {
     max-width: 250px;
 }
@@ -14,10 +27,18 @@ body {
     #about-details-avatar-image {
         max-width: 200px;
     }
+
+    #projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media only screen and (max-width: 766px) {
     .card-text {
         min-height: 2rem;
+    }
+
+    #projects {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
