@@ -127,6 +127,11 @@
                                                 </span>
                                             </h2>
                                             <p class="card-text"><?= $link_converter->convert($project['description'], '_BLANK'); ?></p>
+                                            <?php if (isset($project['homepage'])): ?>
+                                                <span>
+                                                    <a href="<?= $project['homepage']; ?>" target="_BLANK" title=""><?= $project['homepage']; ?></a>
+                                                </span>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                             <?php endforeach; ?>
