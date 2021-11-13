@@ -1,30 +1,50 @@
 <?php
+    session_start();
+
     // Composer autoloader
     require_once(__DIR__ . '/../vendor/autoload.php');
 
     // Load environment variables defined in .evn
     Dotenv\Dotenv::create(__DIR__ . '/../')->load();
 
-    // Instantiate GitHub API client
-    $github_client = new Github\Client;
-
     // Instantiate text-to-link converter
     $link_converter = new \TotallyQuiche\URLtoLink\Converter;
 
-    try {
-        $github_client->authenticate(
-            getenv('GITHUB_PERSONAL_ACCESS_TOKEN'),
-            null,
-            Github\Client::AUTH_HTTP_TOKEN
-        );
+    // Fetch GitHub info from $_SESSION, if it's there, or from the GitHub API
+    if (isset($_SESSION['github-info'])) {
+        $github_user_information = $_SESSION['github-info']['user_information'];
+        $github_bio_text= $_SESSION['github-info']['bio_text'];
+        $projects = $_SESSION['github-info']['projects'];
+    } else {
+        // Instantiate GitHub API client
+        $github_client = new Github\Client;
 
-        $github_user_information = $github_client->api('current_user')->show();
-        $github_bio_text = $link_converter->convert($github_user_information['bio'], '_BLANK');
-        $projects = $github_client->api('user')->repositories('totallyquiche');
-    } catch (Exception $exception) {
-        error_log('Exception encountered while connecting to GitHub API: ' . $exception->getMessage());
-        http_response_code(500);
-        header('location: ' . getenv('WEBSITE_FALLBACK_URL'));
+        try {
+            $github_client->authenticate(
+                getenv('GITHUB_PERSONAL_ACCESS_TOKEN'),
+                null,
+                Github\Client::AUTH_HTTP_TOKEN
+            );
+
+            $github_user_information = $github_client->api('current_user')->show();
+            $github_bio_text = $link_converter->convert($github_user_information['bio'], '_BLANK');
+            $projects = $github_client->api('user')->repositories('totallyquiche');
+
+            usort(
+                $projects,
+                fn($a, $b) => $b['updated_at'] <=> $a['updated_at']
+            );
+
+            $_SESSION['github-info'] = array(
+                'user_information' => $github_user_information,
+                'bio_text' => $github_bio_text,
+                'projects' => $projects,
+            );
+        } catch (Exception $exception) {
+            error_log('Exception encountered while connecting to GitHub API: ' . $exception->getMessage());
+            http_response_code(500);
+            header('location: ' . getenv('WEBSITE_FALLBACK_URL'));
+        }
     }
 ?>
 <!DOCTYPE html>
