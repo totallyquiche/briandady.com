@@ -14,7 +14,10 @@
     if (isset($_SESSION['github-info'])) {
         $github_user_information = $_SESSION['github-info']['user_information'];
         $github_bio_text= $_SESSION['github-info']['bio_text'];
-        $projects = $_SESSION['github-info']['projects'];
+        $projects = array_filter(
+            $_SESSION['github-info']['projects'],
+            fn($project) => !$project['fork']
+        );
     } else {
         // Instantiate GitHub API client
         $github_client = new Github\Client;
