@@ -35,7 +35,7 @@
 
             usort(
                 $projects,
-                fn($a, $b) => $b['updated_at'] <=> $a['updated_at']
+                fn($a, $b) => $b['pushed_at'] <=> $a['pushed_at']
             );
 
             $_SESSION['github-info'] = array(
