@@ -26,7 +26,7 @@
             $github_client->authenticate(
                 getenv('GITHUB_PERSONAL_ACCESS_TOKEN'),
                 null,
-                Github\Client::AUTH_HTTP_TOKEN
+                Github\Client::AUTH_ACCESS_TOKEN
             );
 
             $github_user_information = $github_client->api('current_user')->show();
