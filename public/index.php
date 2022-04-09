@@ -66,7 +66,7 @@
     </head>
     <body>
         <div class="container">
-            <div class="container">
+            <header class="container">
                 <div class="row mt-2">
                     <div class="col-12 col-md-4 mb-2 mt-2 text-center">
                         <img id="about-details-avatar-image" class="rounded-circle img-fluid" src="<?= $github_user_information['avatar_url']; ?>" alt="Photo of Brian Dady">
@@ -109,9 +109,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </header>
             <hr />
-            <div class="container">
+            <main class="container">
                 <div class="row mb-2">
                     <div class="col-12">
                         <h1>Projects</h1>
@@ -141,12 +141,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
+            </main>
+            <footer class="row">
                 <div class="col-12 text-center">
                     <p><span class="fas fa-fw fa-copyright"></span><?= date('Y'); ?> Brian Dady</p>
                 </div>
-            </div>
+            </footer>
         </div>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
