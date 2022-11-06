@@ -5,8 +5,5 @@
         "totallyquiche/php-url-to-link": "^1.0",
         "guzzlehttp/guzzle": "^7.4",
         "http-interop/http-factory-guzzle": "^1.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^8"
     }
 }
