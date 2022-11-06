@@ -1,56 +1,59 @@
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../font/Roboto_Slab/static/RobotoSlab-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Slab Bold';
+    src: url('../font/Roboto_Slab/static/RobotoSlab-Bold.ttf');
+}
+
 body {
-    background-image: url('../images/background.png');
+    background-image: url('../img/background.png');
+    margin: 0;
+    font-family: 'Roboto Slab';
 }
 
-#greeting {
-    font-family: 'VT323', sans-serif;
+body h1 {
+    margin-top: 0;
 }
 
-.badge {
-    font-size: 0.75rem;
+body b {
+    font-family: 'Roboto Slab Bold';
 }
 
-.card {
-    background-image: url('../images/card-background.png');
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
-#projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 1fr;
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
-    grid-auto-flow: row;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20%;
+    margin-top: 2%;
 }
 
-.card-title {
-    font-size: 1.25em;
+#profile-image {
+    border-radius: 50%;
+    height: 15em;
+    width: 15em;
 }
 
-#about-details-avatar-image {
-    max-width: 250px;
+#contact-details-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
 }
 
-@media only screen and (max-width: 990px) {
-    #about-details-avatar-image {
-        max-width: 200px;
-    }
-
-    #projects {
-        grid-template-columns: repeat(2, 1fr);
-    }
+#contact-details-container span {
+    display: block;
 }
 
-@media only screen and (max-width: 766px) {
-    .card-text {
-        min-height: 2rem;
-    }
-
-    #projects {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-a:link {
-    color: #2E2EFF;
+#contact-details-container span i {
+    margin-right: 0.15em;
 }
