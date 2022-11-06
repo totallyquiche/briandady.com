@@ -48,7 +48,7 @@
                     <span>
                         See my GitHub at
                         <a
-                            href="<?= getUserUrl($session_key, $github_user_name) ?>"
+                            href="<?= getUserHtmlUrl($session_key, $github_user_name) ?>"
                             title="View the <?= $github_user_name ?> GitHub page">
                             <i class="fa-brands fa-github-alt"></i><?= $github_user_name ?>
                         </a>

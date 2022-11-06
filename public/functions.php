@@ -107,9 +107,9 @@ function getUserEmail(string $session_key, string $github_user_name): string
     return getUserData($session_key, $github_user_name)['user_information']['email'];
 }
 
-function getUserUrl(string $session_key, string $github_user_name): string
+function getUserHtmlUrl(string $session_key, string $github_user_name): string
 {
-    return getUserData($session_key, $github_user_name)['user_information']['url'];
+    return getUserData($session_key, $github_user_name)['user_information']['html_url'];
 }
 
 function getUserProjects(string $session_key, string $github_user_name): array
