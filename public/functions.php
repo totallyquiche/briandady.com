@@ -111,3 +111,8 @@ function getUserUrl(string $session_key, string $github_user_name): string
 {
     return getUserData($session_key, $github_user_name)['user_information']['url'];
 }
+
+function getUserProjects(string $session_key, string $github_user_name): array
+{
+    return getUserData($session_key, $github_user_name)['projects'];
+}

@@ -11,7 +11,3 @@ $session_key = getenv('SESSION_KEY');
 $github_user_name = getenv('GITHUB_USER_NAME');
 
 $user_data = getUserData($session_key, $github_user_name);
-
-// header('Content-Type: application/json');
-// echo json_encode($user_data);
-// exit;
