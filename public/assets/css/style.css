@@ -42,6 +42,10 @@ header {
     border-radius: 50%;
     height: 15em;
     width: 15em;
+    border-style: dashed;
+    border-width: 0.15em;
+    padding: 0.15em;
+    border-color: #6c757d;
 }
 
 #contact-details-container {
