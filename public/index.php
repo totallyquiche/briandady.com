@@ -67,7 +67,7 @@
                 <div id="project-card-container">
                     <?php
                         foreach (getUserProjects($session_key, $github_user_name) as $project) {
-                            $url = $project['url'] ?? '';
+                            $html_url = $project['html_url'] ?? '';
                             $name = $project['name'] ?? '';
                             $language = $project['language'] ?? '';
                             $description = $project['description'] ?? '';
@@ -75,7 +75,7 @@
                             echo <<<HTML
     <div class="project-card">
         <h3>
-            <a href="$url" title="View this project on GitHub">$name</a>
+            <a href="$html_url" title="View this project on GitHub">$name</a>
         </h3>
         <span>$description</span>
     </div>
