@@ -24,14 +24,12 @@
     <body>
         <div id="container">
             <header>
-                <div id="profile-image-container">
-                    <img
-                        id="profile-image"
-                        src="<?= getUserPhotoUrl($session_key, $github_user_name) ?>"
-                        alt="<?= getUserName($session_key, $github_user_name) ?> GitHub profile image"
-                        height="250"
-                        width="250">
-                </div>
+                <img
+                    id="profile-image"
+                    src="<?= getUserPhotoUrl($session_key, $github_user_name) ?>"
+                    alt="<?= getUserName($session_key, $github_user_name) ?> GitHub profile image"
+                    height="250"
+                    width="250">
                 <div id="contact-details-container">
                     <h1>Hello, World!</h1>
                     <span>

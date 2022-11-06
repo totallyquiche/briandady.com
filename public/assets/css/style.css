@@ -14,7 +14,13 @@ body {
     font-family: 'Roboto Slab';
 }
 
-h1, h2, h3 {
+body * {
+    transition: ease-in-out;
+    transition-property: all;
+    transition-duration: 0.25s;
+}
+
+h1, h3 {
     margin-top: 0;
 }
 
@@ -33,9 +39,10 @@ body b {
 
 header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 2% 10%;
+    margin-top: 2%
 }
 
 hr {
@@ -44,8 +51,8 @@ hr {
 
 #profile-image {
     border-radius: 50%;
-    height: 15em;
-    width: 15em;
+    height: 10em;
+    width: 10em;
     border-style: dashed;
     border-width: 0.15em;
     padding: 0.15em;
@@ -55,7 +62,11 @@ hr {
 #contact-details-container {
     display: flex;
     flex-direction: column;
-    margin-left: 10%;
+    margin: 2% 0;
+}
+
+#contact-details-container h1 {
+    text-align: center;
 }
 
 #contact-details-container span {
@@ -73,9 +84,57 @@ hr {
 }
 
 .project-card {
-    width: 25%;
-    padding: 2%;
+    width: 92%;
+    padding: 4%;
     margin: 2% 0;
     background-image: url('../img/card-background.png');
     background-color: white;
+}
+
+@media screen and (min-width: 768px) {
+    .project-card {
+        width: 42%;
+        padding: 2%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    header {
+        flex-direction: row;
+        margin: 0 5%;
+    }
+
+    #profile-image {
+        height: 12em;
+        width: 12em;
+    }
+
+    #contact-details-container h1 {
+        text-align: left;
+    }
+
+    #contact-details-container {
+        margin-left: 10%;
+    }
+
+    .project-card {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    header {
+        margin: 2% 10%;
+    }
+
+    #profile-image {
+        height: 15em;
+        width: 15em;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .project-card {
+        width: 17%;
+    }
 }
