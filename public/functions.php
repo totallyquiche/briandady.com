@@ -114,5 +114,13 @@ function getUserHtmlUrl(string $session_key, string $github_user_name): string
 
 function getUserProjects(string $session_key, string $github_user_name): array
 {
-    return getUserData($session_key, $github_user_name)['projects'];
+    $projects = getUserData($session_key, $github_user_name)['projects'];
+
+    usort($projects, function($a, $b) {
+        return (new DateTime($b['updated_at'])) < (new DateTime($a['updated_at']))
+            ? -1
+            : 1;
+    });
+
+    return $projects;
 }
