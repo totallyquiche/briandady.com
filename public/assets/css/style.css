@@ -16,7 +16,7 @@ body {
 
 body * {
     transition: ease-in-out;
-    transition-property: all;
+    transition-property: height, width, margin, padding;
     transition-duration: 0.25s;
 }
 
